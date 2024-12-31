@@ -2,17 +2,34 @@
 <html>
     <head>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
-        <title> Tempflo projs </title>
+        <title> Mega projs </title>
         <link rel = "stylesheet" type = "text/css" href = "style.css">
     </head>
     <body class ="index">
+        <audio id = "background-audio" autoplay loop>
+            <source src = "assets/bgm.mp3" type = "audio/mp3">
+        </audio>
         <div class = "container">
-            <h1> Funny stuff </h1>
+            <h1> Mega epic content </h1>
             <ul>
                 <li><a href = "dokkandata.html" class = "button">Dokkan Data</a></li>
                 <li><a href = "ostguessr.html" class = "button">Dokkan OST Guessr</a></li>
+                <li><a href = "" class = "button">KustaGPT</a></li>
+                <li><a href = "" class = "button">Ez JP to EN</a></li>
+                <li><a href = "" class = "button">Fisch Clicker</a></li>
+                <li><a href = "" class = "button">GPT Scraper</a></li>
+                <li><a href = "" class = "button">Save Gogeta From Cabba</a></li>
             </ul>
         </div>
+        
+        <a href = "#" id = "mute-button" class = "mute-button">
+            <img src = "assets/unmute.png" alt = "Mute Icon" id = "mute-icon" />
+        </a>
+
+        <input type = "range" id = "volume-slider" class = "volume-slider" min = "0" max = "1" step = "0.01" value = "1">
+
         <a href = "kofi.html" class = "s-button">Support me</a>
+
+        <script src = "script.js"></script>
     </body>
 </html>

@@ -6,6 +6,7 @@ body {
     height: 100vh;
     color: black;
     background-color: rgb(153, 153, 153);
+    background-image: url("https://play-lh.googleusercontent.com/DYeuEiE39MT23VYxGGM9sRfjt2jbapApnCwB1iujLOZEsltTo1Uxy4VKcvqnYntclAQ=w526-h296-rw");
 }
 
 .container {
@@ -55,6 +56,7 @@ ul {
     border-radius: 5px;
     font-weight: bold;
     transition: background-color 0.3s;
+    font-family: 'Poppins', sans-serif;
 }
 
 .s-button:hover {
