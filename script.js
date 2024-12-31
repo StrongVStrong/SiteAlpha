@@ -5,7 +5,15 @@ const volumeSlider = document.getElementById('volume-slider');
 
 if (localStorage.getItem('audio-muted') === 'true') {
     audio.muted = true;
+    muteIcon.src = 'assets/mute.png';
+} else {
+    audio.muted = false;
     muteIcon.src = 'assets/unmute.png';
+}
+
+if (localStorage.getItem('audio-volume')) {
+    audio.volume = parseFloat(localStorage.getItem('audio-volume'));
+    volumeSlider.value = audio.volume;
 }
 
 muteButton.addEventListener('click', () => {
@@ -23,4 +31,5 @@ muteButton.addEventListener('click', () => {
 
 volumeSlider.addEventListener('input', (event) => {
     audio.volume = event.target.value;
+    localStorage.setItem('audio-volume', event.target.value);
 })
