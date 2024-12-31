@@ -33,3 +33,24 @@ volumeSlider.addEventListener('input', (event) => {
     audio.volume = event.target.value;
     localStorage.setItem('audio-volume', event.target.value);
 })
+
+window.addEventListener('scroll', function() {
+    const scrollPosition = window.scrollY + window.innerHeight;
+    
+    // Add class for fixed header when scrolling
+    const container = document.querySelector('.container');
+    if (window.scrollY > 0) {
+        container.classList.add('header-fixed');
+    } else {
+        container.classList.remove('header-fixed');
+    }
+    
+    // Reveal project items on scroll
+    const projects = document.querySelectorAll('li');
+    projects.forEach(function(project) {
+        if (project.offsetTop < scrollPosition) {
+            project.classList.add('visible');
+        }
+    });
+});
+

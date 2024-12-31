@@ -5,30 +5,41 @@
         <title> Mega projs </title>
         <link rel = "stylesheet" type = "text/css" href = "style.css">
     </head>
-    <body class ="index">
+    <body class ="home">
         <audio id = "background-audio" autoplay loop>
             <source src = "assets/outside.mp3" type = "audio/mp3">
         </audio>
-        <div class = "container">
-            <h1> Mega epic content </h1>
+
+        <div class = "menu">
             <ul>
-                <li><a href = "dokkandata.html" class = "button">Dokkan Data</a></li>
-                <li><a href = "ostguessr.html" class = "button">Dokkan OST Guessr</a></li>
-                <li><a href = "" class = "button">KustaGPT</a></li>
-                <li><a href = "" class = "button">Ez JP to EN</a></li>
-                <li><a href = "" class = "button">Fisch Clicker</a></li>
-                <li><a href = "" class = "button">GPT Scraper</a></li>
-                <li><a href = "" class = "button">Save Gogeta From Cabba</a></li>
+                <li><a href = "index.html" class = "menu-button">Home</a></li>
+                <a href = "kofi.html" class = "s-button">Support me</a>
             </ul>
         </div>
-        
-        <a href = "#" id = "mute-button" class = "mute-button">
-            <img src = "" alt = "Mute Icon" id = "mute-icon" />
-        </a>
 
-        <input type = "range" id = "volume-slider" class = "volume-slider" min = "0" max = "1" step = "0.01" value = "1">
+        <div class = "container">
+            <h1> Mega Epic Content </h1>
+            <p1>wip</p1>
+            <ul>
+                <li><a href = "dokkandata.html" class = "button">Dokkan Data</a></li>
+                <!--<li><a href = "ostguessr.html" class = "button">Dokkan OST Guessr</a></li>-->
+                <li><a href = "https://github.com/StrongVStrong/KustaGPT" class = "button">KustaGPT</a></li>
+                <li><a href = "https://github.com/StrongVStrong/LiveTranslate" class = "button">Ez JP to EN</a></li>
+                <li><a href = "https://github.com/StrongVStrong/FischCircleClicker" class = "button">Fisch Clicker</a></li>
+                <li><a href = "https://github.com/StrongVStrong/SaveG4FromCabba" class = "button">Save Gogeta From Cabba</a></li>
+            </ul>
+            
+            <div class = "volume">
+                <a href = "#" id = "mute-button" class = "mute-button">
+                    <img src = "" alt = "Mute Icon" id = "mute-icon" />
+                </a>
+            </div>
 
-        <a href = "kofi.html" class = "s-button">Support me</a>
+            <div class = "vslider">
+                <input type = "range" id = "volume-slider" class = "volume-slider" min = "0" max = "1" step = "0.01" value = "1">
+            </div>
+
+        </div>
 
         <script src = "script.js"></script>
     </body>
