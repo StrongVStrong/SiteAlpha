@@ -12,7 +12,9 @@
     height: 100vh;
     color: black;
     background-color: rgb(153, 153, 153);
-    background-image: url("https://play-lh.googleusercontent.com/DYeuEiE39MT23VYxGGM9sRfjt2jbapApnCwB1iujLOZEsltTo1Uxy4VKcvqnYntclAQ=w526-h296-rw");
+    background-image: url("https://i.pinimg.com/originals/3e/49/01/3e4901898a7ed3e233381f0db74e9b3d.gif");
+    background-size: cover;
+    background-position: center;
 }
 
 body {
@@ -23,6 +25,32 @@ body {
     height: 100vh;
     color: black;
     background-color: rgb(153, 153, 153);
+}
+
+.dokkan {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: black;
+    background-color: rgb(153, 153, 153);
+    background-size: cover;
+    background-position: center;
+    background-image: url("https://scontent-iad3-2.xx.fbcdn.net/v/t39.30808-6/450048265_802074388715783_4343954416765759636_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=86c6b0&_nc_ohc=O5-sSs8Hr5EQ7kNvgG27rJ-&_nc_zt=23&_nc_ht=scontent-iad3-2.xx&_nc_gid=A1M1xOsqPVyOttsJLDvRfoe&oh=00_AYB3jAZRCl26KWmAfAZAuq3hTq7hd5Q_45tRMe-SvAG-uA&oe=677A643F")
+}
+
+.kofi {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: black;
+    background-color: rgb(153, 153, 153);
+    background-size: cover;
+    background-position: center;
+    background-image: url("https://static1.cbrimages.com/wordpress/wp-content/uploads/2019/07/Goku-Death-Feature.jpg")
 }
 
 .container {
