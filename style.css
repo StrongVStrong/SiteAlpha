@@ -68,18 +68,33 @@ body {
     margin-top: 50px;
 }
 
-.container-small {
+.vol-container {
+    position: fixed;
+    color: black;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 65px 130px;
+}
+
+.scontainer {
     text-align: center;
     color: black;
     margin: 0;
-    background-color: rgb(220, 220, 220);
     border-radius: 5px;
     padding: 10px 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
+    width: 100%;
+    min-height: 100vh;
+    margin-top: 0;
 }
 
 ul {
@@ -89,7 +104,7 @@ ul {
 
 .button {
     display: inline-block;
-    padding: 10px 50px;
+    padding: 10px 40px;
     margin: 10px 0;
     background-color: gray;
     border-radius: 5px;
@@ -97,7 +112,7 @@ ul {
     text-align: center;
     color: black;
     text-decoration: none;
-    width: 250px;
+    width: 350px;
     transition: background-color 0.3s;
     font-weight: bold;
     font-family: 'Poppins', sans-serif;
@@ -117,7 +132,7 @@ ul {
     background-color: rgb(255, 124, 124);
     color: black;
     text-decoration: none;
-    padding: 10px 20px;
+    padding: 4px 10px;
     border-radius: 5px;
     font-weight: bold;
     transition: background-color 0.3s;
@@ -125,8 +140,51 @@ ul {
     z-index: 2000;
 }
 
+.s-button img {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    flex-shrink: 0;
+    vertical-align: middle;
+}
+
+.s-button span {
+    text-align: left;
+}
+
 .s-button:hover {
     background-color: rgb(255, 0, 0);
+    transform:scale(1.1)
+}
+
+.kofi-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 300px;
+    margin: 0;
+    background-color: gray;
+    border-radius: 5px;
+    font-size: 100px;
+    text-align: center;
+    color: black;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    z-index: 2000;
+}
+
+.kofi-button img {
+    width: 200px;
+    height: 200px;
+    margin-right: 30px;
+    flex-shrink: 0;
+}
+
+.kofi-button:hover {
+    background-color: black;
+    color: white;
     transform:scale(1.1)
 }
 
@@ -250,7 +308,7 @@ p3 {
     text-align: center;
     opacity: 0;
     transition: opacity 1s ease-in-out;
-    animation: fadeIn 1s 4s forwards;
+    animation: fadeIn 1s 2s forwards;
 }
 
 @keyframes fadeIn {
