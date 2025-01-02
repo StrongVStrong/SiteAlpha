@@ -97,6 +97,15 @@ async function sendMessage() {
     }
 }
 
+// Function to send the first message from Vegito
+function sendInitialMessage() {
+    const initialMessage = "Hmph.  It's Vegito.  What do you want? Don't waste my time, unless you're here to witness my unparalleled power firsthand, of course.";
+    appendMessage(initialMessage, 'bot'); // Show Vegito's first message
+}
+
+// Trigger initial message when the page is loaded
+window.onload = sendInitialMessage;
+
 // Event listener for sending the message when the "Send" button is clicked
 document.getElementById('sendBtn').addEventListener('click', sendMessage);
 

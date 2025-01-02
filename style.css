@@ -391,7 +391,7 @@ p3 {
     display: flex;
     flex-direction: column;
     height: 100%;
-    opacity: 0.2;
+    opacity: 0.9;
     background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/76092abd-418d-4749-a423-e5d20cdfc187/dg6qjvy-eac477d7-1c89-4458-bafc-835f17e4a2f7.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzc2MDkyYWJkLTQxOGQtNDc0OS1hNDIzLWU1ZDIwY2RmYzE4N1wvZGc2cWp2eS1lYWM0NzdkNy0xYzg5LTQ0NTgtYmFmYy04MzVmMTdlNGEyZjcuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.tW1ZcAAK5xSl5KBbQ2PTTH9005SxGMrrs8LMzd-7iuw");
     background-size: cover;
     background-position: center;
@@ -429,7 +429,7 @@ p3 {
 }
 
 .bot-message {
-    background-color: #e8e8e8;
+    background-color: #00e5ff;
     align-self: flex-start;
 }
 
