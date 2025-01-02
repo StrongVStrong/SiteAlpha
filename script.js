@@ -93,7 +93,7 @@ async function sendMessage() {
         }
     } catch (error) {
         console.error('Error:', error);
-        appendMessage(`Oops! Something went wrong: ${error.message}`, 'bot');
+        appendMessage("Uh oh looks like I'm dead");
     }
 }
 
