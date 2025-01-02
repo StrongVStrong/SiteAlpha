@@ -54,3 +54,57 @@ window.addEventListener('scroll', function() {
     });
 });
 
+// Function to append a message to the chatbox
+function appendMessage(message, type) {
+    const messagesContainer = document.getElementById('messages');
+    const messageDiv = document.createElement('div');
+    messageDiv.classList.add('message');
+    messageDiv.classList.add(type === 'user' ? 'user-message' : 'bot-message');
+    messageDiv.textContent = message;
+    messagesContainer.appendChild(messageDiv);
+    messagesContainer.scrollTop = messagesContainer.scrollHeight; // Scroll to the bottom
+}
+
+async function sendMessage() {
+    const userInput = document.getElementById('userInput').value;
+    if (userInput.trim() === '') return; // Don't send empty messages
+
+    appendMessage(userInput, 'user'); // Show user message
+    document.getElementById('userInput').value = ''; // Clear input box
+
+    try {
+        const response = await fetch('http://127.0.0.1:5000/predict', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ user_input: userInput })
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        if (data.response) {
+            appendMessage(data.response, 'bot');
+        } else {
+            appendMessage("Sorry, I couldn't get a response.", 'bot');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        appendMessage(`Oops! Something went wrong: ${error.message}`, 'bot');
+    }
+}
+
+// Event listener for sending the message when the "Send" button is clicked
+document.getElementById('sendBtn').addEventListener('click', sendMessage);
+
+// Event listener for sending the message when "Enter" is pressed
+document.getElementById('userInput').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        event.preventDefault();  // Prevent form submission behavior
+        sendMessage();
+    }
+});
+
