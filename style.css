@@ -424,7 +424,7 @@ p3 {
 }
 
 .user-message {
-    background-color: #ff6d6d;
+    background-color: #ff4343;
     align-self: flex-end;
 }
 
@@ -445,19 +445,67 @@ input[type="text"] {
 #sendBtn {
     padding: 10px;
     width: auto;
-    background-color: #4CAF50;
+    background-color: #0073ff;
     color: white;
     border: none;
     border-radius: 5px;
+    font-size: 13px;
     cursor: pointer;
+    transition-duration: 0.2s;
     flex-shrink: 0;
 }
 
 #sendBtn:hover {
-    background-color: #45a049;
+    background-color: #00d9ff;
+}
+
+#hideBtn {
+    padding: 10px;
+    width: auto;
+    background-color: #0073ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition-duration: 0.2s;
+    flex-shrink: 0;
+}
+
+#hideBtn:hover {
+    background-color: #00d9ff;
 }
 
 input:focus {
     outline: none; /* Remove default focus outline */
-    box-shadow: 0 0 5px 2px rgba(29, 255, 71, 0.8); /* Add a nice glow effect on focus */
+    box-shadow: 0 0 5px 2px rgba(29, 232, 255, 0.8); /* Add a nice glow effect on focus */
+}
+
+#chatbotIcon {
+    display: none; /* Initially hidden */
+    position: absolute; /* Absolutely position the icon in the same location */
+    top: 350px;
+    left: 30px;
+    width: 100px; /* Make the icon fill the same width as the chatbot container */
+    height: 100px; /* Make the icon fill the same height as the chatbot container */
+    background: #f0f0f0; /* Optional: Add background color or transparency */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid rgb(0, 204, 255); /* Red border */
+    border-radius: 50%; /* Rounded corners for the container */
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+#chatbotIcon:hover {
+    cursor: pointer; /* Changes the cursor to a pointer when hovering */
+    border: 6px solid rgb(0, 153, 255); /* Ensure border is red on hover */
+}
+
+#chatbotIcon img {
+    width: 100%; /* Set the icon size as needed */
+    height: 100%; /* Maintain aspect ratio of the image */
+    border-radius:50px;
+    object-fit: cover;
 }

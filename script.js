@@ -99,7 +99,7 @@ async function sendMessage() {
 
 // Function to send the first message from Vegito
 function sendInitialMessage() {
-    const initialMessage = "Hmph.  It's Vegito.  What do you want? Don't waste my time, unless you're here to witness my unparalleled power firsthand, of course.";
+    const initialMessage = "Yosha!";
     appendMessage(initialMessage, 'bot'); // Show Vegito's first message
 }
 
@@ -117,3 +117,17 @@ document.getElementById('userInput').addEventListener('keypress', function(event
     }
 });
 
+document.getElementById("hideBtn").addEventListener("click", function() {
+    var chatbotContainer = document.getElementById("bot-container");
+    chatbotContainer.style.display = "none"; // This hides the entire container
+    chatbotIcon.style.display = "block";
+});
+
+document.getElementById("showChatbotIcon").addEventListener("click", function() {
+    // Show the chatbot container and hide the icon
+    var chatbotContainer = document.getElementById("bot-container");
+    var chatbotIcon = document.getElementById("chatbotIcon");
+
+    chatbotContainer.style.display = "block"; // Show the chatbot
+    chatbotIcon.style.display = "none"; // Hide the icon
+});
