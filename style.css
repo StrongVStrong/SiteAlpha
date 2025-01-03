@@ -376,7 +376,7 @@ p3 {
 .chatbot-container {
     position: fixed;
     left: 20px;  /* Position it from the left side */
-    top: 60%;
+    top: 55%;
     transform: translateY(-50%);
     width: 300px;  /* Adjust the width as needed */
     height: 400px;  /* Adjust the height as needed */
