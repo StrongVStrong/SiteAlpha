@@ -73,7 +73,7 @@ async function sendMessage() {
     document.getElementById('userInput').value = ''; // Clear input box
 
     try {
-        const response = await fetch('http://127.0.0.1:5000/predict', {
+        const response = await fetch('https://9182bd48-8535-491f-99bb-1ce14330fbcb-00-3ji0pb9jnskp3.janeway.replit.dev/predict', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
