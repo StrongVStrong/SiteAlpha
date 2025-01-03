@@ -484,7 +484,7 @@ input:focus {
 #chatbotIcon {
     display: none; /* Initially hidden */
     position: absolute; /* Absolutely position the icon in the same location */
-    top: 350px;
+    top: 50%;
     left: 30px;
     width: 100px; /* Make the icon fill the same width as the chatbot container */
     height: 100px; /* Make the icon fill the same height as the chatbot container */
