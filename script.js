@@ -73,7 +73,7 @@ async function sendMessage() {
     document.getElementById('userInput').value = ''; // Clear input box
 
     try {
-        const response = await fetch('https://9182bd48-8535-491f-99bb-1ce14330fbcb-00-3ji0pb9jnskp3.janeway.replit.dev/predict', {
+        const response = await fetch('http://127.0.0.1:5000/predict', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -93,7 +93,7 @@ async function sendMessage() {
         }
     } catch (error) {
         console.error('Error:', error);
-        appendMessage("Uh oh looks like I'm dead");
+        appendMessage("Looks like @strongvstrong is offline go spam @ him and wake him up");
     }
 }
 
