@@ -501,6 +501,7 @@ input:focus {
     border-radius: 50%; /* Rounded corners for the container */
     transition: all 0.3s ease;
     overflow: hidden;
+    z-index: 10000;
 }
 
 #chatbotIcon:hover {
