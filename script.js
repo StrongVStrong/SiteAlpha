@@ -99,7 +99,7 @@ async function sendMessage() {
 
 // Function to send the first message from Vegito
 function sendInitialMessage() {
-    const initialMessage = "Yosha!";
+    const initialMessage = "Yosha! Welcome to Megas Hub enjoy your stay!";
     appendMessage(initialMessage, 'bot'); // Show Vegito's first message
 }
 

@@ -17,6 +17,19 @@
     background-position: center;
 }
 
+.ost {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: black;
+    background-color: rgb(153, 153, 153);
+    background-image: url("https://media1.tenor.com/m/GILlI2cCXNYAAAAd/give-me-the-power-lend-me-your-energy.gif");
+    background-size: cover;
+    background-position: center;
+}
+
 body {
     display: flex;
     flex-direction: column;
