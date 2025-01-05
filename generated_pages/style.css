@@ -1,0 +1,646 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: black;
+    background-color: rgb(153, 153, 153);
+    background-image: url("https://i.pinimg.com/originals/3e/49/01/3e4901898a7ed3e233381f0db74e9b3d.gif");
+    background-size: cover;
+    background-position: center;
+}
+
+.ost {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: black;
+    background-color: rgb(153, 153, 153);
+    background-image: url("https://media1.tenor.com/m/GILlI2cCXNYAAAAd/give-me-the-power-lend-me-your-energy.gif");
+    background-size: cover;
+    background-position: center;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: black;
+    background-color: rgb(153, 153, 153);
+}
+
+.characters {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align content at the top */
+    align-items: center;
+    color: black;
+    background-color: rgb(153, 153, 153, 0.8);
+    overflow-y: auto; /* Allow vertical scrolling */
+    background-image: url("https://media.tenor.com/WaE3YVenGtoAAAAM/str-ssj3-goku-goku.gif");
+    background-size: cover;
+    background-position: center;
+}
+
+.dokkan {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: black;
+    background-color: rgb(153, 153, 153);
+    background-size: cover;
+    background-position: center;
+    background-image: url("https://scontent-iad3-2.xx.fbcdn.net/v/t39.30808-6/450048265_802074388715783_4343954416765759636_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=86c6b0&_nc_ohc=O5-sSs8Hr5EQ7kNvgG27rJ-&_nc_zt=23&_nc_ht=scontent-iad3-2.xx&_nc_gid=A1M1xOsqPVyOttsJLDvRfoe&oh=00_AYB3jAZRCl26KWmAfAZAuq3hTq7hd5Q_45tRMe-SvAG-uA&oe=677A643F")
+}
+
+.kofi {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: black;
+    background-color: rgb(153, 153, 153);
+    background-size: cover;
+    background-position: center;
+    background-image: url("https://static1.cbrimages.com/wordpress/wp-content/uploads/2019/07/Goku-Death-Feature.jpg")
+}
+
+.container {
+    text-align: center;
+    color: black;
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    background-color: rgb(220, 220, 220, 0.8);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.char {
+    text-align: center;
+    color: black;
+    margin: 0;
+    background-color: rgb(220, 220, 220, 0.5);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    width: 100%;
+}
+
+.stats-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Distribute space evenly */
+    width: 100%; /* Ensure it stretches across the full width */
+}
+
+.stats-labels {
+    display: flex;
+    margin: 5px 0;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.stats-values {
+    display: flex;
+    margin: 5px 0;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.stats-labels p {
+    margin: 5px 50px;
+}
+.stats-values p {
+    margin: 5px 75px;
+}
+
+.stats-labels p {
+    font-weight: bold; /* To highlight labels */
+}
+
+.vol-container {
+    position: fixed;
+    color: black;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 65px 130px;
+}
+
+.scontainer {
+    text-align: center;
+    color: black;
+    margin: 0;
+    border-radius: 5px;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    margin-top: 0;
+}
+
+ul {
+    list-style-type: none;  /* Removes bullets */
+    padding: 0;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 40px;
+    margin: 10px 0;
+    background-color: gray;
+    border-radius: 5px;
+    font-size: 18px;
+    text-align: center;
+    color: black;
+    text-decoration: none;
+    width: 350px;
+    transition: background-color 0.3s;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    z-index: 2000;
+}
+
+.button:hover {
+    background-color: black;
+    color: white;
+    transform:scale(1.1)
+}
+
+.s-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgb(255, 124, 124);
+    color: black;
+    text-decoration: none;
+    padding: 4px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    font-family: 'Poppins', sans-serif;
+    z-index: 2000;
+}
+
+.s-button img {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    flex-shrink: 0;
+    vertical-align: middle;
+}
+
+.s-button span {
+    text-align: left;
+}
+
+.s-button:hover {
+    background-color: rgb(255, 0, 0);
+    transform:scale(1.1)
+}
+
+.kofi-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 300px;
+    margin: 0;
+    background-color: gray;
+    border-radius: 5px;
+    font-size: 100px;
+    text-align: center;
+    color: black;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    z-index: 2000;
+}
+
+.kofi-button img {
+    width: 200px;
+    height: 200px;
+    margin-right: 30px;
+    flex-shrink: 0;
+}
+
+.kofi-button:hover {
+    background-color: black;
+    color: white;
+    transform:scale(1.1)
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    background-color: red;
+    border-radius: 5px;
+    padding: 10px 20px;
+    transition-duration: 0.2s;
+    top: 100px;
+    font-size: 50px;
+    margin: 0;
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgb(254, 212, 0);
+    border-radius: 5px;
+    padding: 10px 20px;
+    transition-duration: 0.2s;
+    top: 60px;
+    font-size: 40px;
+    margin: 0;
+    text-align: center;
+    display:block;
+    padding-top: 70px;
+}
+
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgb(254, 161, 0);
+    border-radius: 5px;
+    padding: 10px 20px;
+    transition-duration: 0.2s;
+    top: 60px;
+    font-size: 40px;
+    margin: 0;
+    text-align: center;
+    display:block;
+    padding-top: 15px;
+}
+
+h1:hover {
+    transform:scale(1.1)
+}
+
+.menu {
+    background-color: black;
+    color: white;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.menu-button {
+    display: inline-block;
+    padding: 5px;
+    margin: 0;
+    background-color: rgb(0, 0, 0);
+    border-radius: 5px;
+    font-size: 23px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    width: 150px;
+    transition: background-color 0.3s;
+    font-family: 'Montserrat', sans-serif;
+    z-index: 2000;
+}
+
+.menu-button:hover {
+    background-color: rgb(113, 113, 113);
+    color: white;
+    transform:scale(1.1)
+}
+
+.volume {
+    position: absolute;
+    right: 150px;
+    bottom: 10px;
+}
+
+.vslider {
+    position: absolute;
+    right: 10px;
+    bottom: 53px;
+}
+
+#volume-slider {
+    -webkit-appearance: none;  
+    appearance: none;
+    width: 100%;               
+    height: 10px;             
+    background: #000000;         
+    border-radius: 5px;      
+    outline: none;         
+}
+
+#volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none; 
+    appearance: none;
+    width: 20px;              
+    height: 10px;
+    border-radius: 0%;       
+    background: #4CAF50;     
+    cursor: pointer;          
+    transition: background 0.3s; 
+}
+
+#volume-slider::-webkit-slider-thumb:hover {
+    height: 20px;
+}
+
+/* For Firefox */
+#volume-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+/* For Firefox hover effect */
+#volume-slider::-moz-range-thumb:hover {
+    background: #45a049;
+}
+
+/* For Internet Explorer */
+#volume-slider::-ms-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+/* For Internet Explorer hover effect */
+#volume-slider::-ms-thumb:hover {
+    background: #45a049;
+}
+
+#table-container {
+    bottom: 0px;
+    height: 80%;
+    width: 100%;
+}
+
+p {
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgb(254, 254, 0);
+    border-radius: 5px;
+    padding: 5px 5px;
+    transition-duration: 0.2s;
+    font-size: 20px;
+    margin: 0;
+    text-align: center;
+    color: black;
+}
+
+a {
+    color: black;
+}
+
+.hidelink {
+    text-decoration: none;
+}
+
+p1 {
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgb(254, 212, 0);
+    border-radius: 5px;
+    padding: 5px 5px;
+    transition-duration: 0.2s;
+    top: 200px;
+    font-size: 20px;
+    margin: 0;
+    text-align: center;
+}
+
+p2{
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgb(254, 212, 0);
+    border-radius: 5px;
+    padding: 5px 5px;
+    transition-duration: 0.2s;
+    top: 115px;
+    font-size: 15px;
+    margin: 0;
+    text-align: center;
+    display:block;
+}
+
+p3 {
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgb(254, 212, 0);
+    border-radius: 5px;
+    padding: 2px 2px;
+    transition-duration: 0.2s;
+    top: 150px;
+    font-size: 15px;
+    margin: 0;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    animation: fadeIn 1s 2s forwards;
+    display:block;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+p4 {
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgb(254, 254, 0);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    padding: 5px 5px;
+    transition-duration: 0.2s;
+    font-size: 20px;
+    margin: 0;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    border: 2px solid #000000; 
+}
+
+p4:hover {
+    border: 4px solid #a80000;
+    background-color: rgb(255, 217, 0);
+}
+
+.chatbot-container {
+    position: fixed;
+    left: 20px;  /* Position it from the left side */
+    top: 55%;
+    transform: translateY(-50%);
+    width: 300px;  /* Adjust the width as needed */
+    height: 400px;  /* Adjust the height as needed */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 20px rgb(0, 187, 255);
+    padding: 10px;
+    z-index: 1000;
+}
+
+.chatbox {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    opacity: 0.9;
+    background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/76092abd-418d-4749-a423-e5d20cdfc187/dg6qjvy-eac477d7-1c89-4458-bafc-835f17e4a2f7.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzc2MDkyYWJkLTQxOGQtNDc0OS1hNDIzLWU1ZDIwY2RmYzE4N1wvZGc2cWp2eS1lYWM0NzdkNy0xYzg5LTQ0NTgtYmFmYy04MzVmMTdlNGEyZjcuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.tW1ZcAAK5xSl5KBbQ2PTTH9005SxGMrrs8LMzd-7iuw");
+    background-size: cover;
+    background-position: center;
+}
+
+.chatbox-input-container {
+    display: flex;
+    align-items: center;  /* Vertically center the input and button */
+    margin-top: 10px;  /* Space between the messages and input */
+}
+
+.messages {
+    flex-grow: 1;
+    overflow-y: auto;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    max-height: 300px;
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.message {
+    margin: 5px 0;
+    padding: 8px;
+    border-radius: 5px;
+    max-width: 80%;
+    text-align: left;
+}
+
+.user-message {
+    background-color: #ff4343;
+    align-self: flex-end;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.bot-message {
+    background-color: #00e5ff;
+    align-self: flex-start;
+    font-family: 'Montserrat', sans-serif;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 80%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-right: 10px;
+    flex-grow: 1;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#sendBtn {
+    padding: 10px;
+    width: auto;
+    background-color: #0073ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 13px;
+    cursor: pointer;
+    transition-duration: 0.2s;
+    flex-shrink: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#sendBtn:hover {
+    background-color: #00d9ff;
+}
+
+#hideBtn {
+    padding: 10px;
+    width: auto;
+    background-color: #0073ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition-duration: 0.2s;
+    flex-shrink: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#hideBtn:hover {
+    background-color: #00d9ff;
+}
+
+input:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 5px 2px rgba(29, 232, 255, 0.8); /* Add a nice glow effect on focus */
+}
+
+#chatbotIcon {
+    display: none; /* Initially hidden */
+    position: absolute; /* Absolutely position the icon in the same location */
+    top: 50%;
+    left: 30px;
+    width: 100px; /* Make the icon fill the same width as the chatbot container */
+    height: 100px; /* Make the icon fill the same height as the chatbot container */
+    background: #f0f0f0; /* Optional: Add background color or transparency */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid rgb(0, 204, 255); /* Red border */
+    border-radius: 50%; /* Rounded corners for the container */
+    transition: all 0.3s ease;
+    overflow: hidden;
+    z-index: 10000;
+    box-shadow: 0 0 5px 5px rgba(29, 232, 255, 0.8); 
+}
+
+#chatbotIcon:hover {
+    cursor: pointer; /* Changes the cursor to a pointer when hovering */
+    border: 6px solid rgb(0, 153, 255); /* Ensure border is red on hover */
+}
+
+#chatbotIcon img {
+    width: 100%; /* Set the icon size as needed */
+    height: 100%; /* Maintain aspect ratio of the image */
+    border-radius:50px;
+    object-fit: cover;
+}
