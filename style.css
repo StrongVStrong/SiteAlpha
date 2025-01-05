@@ -40,6 +40,19 @@ body {
     background-color: rgb(153, 153, 153);
 }
 
+.characters {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align content at the top */
+    align-items: center;
+    color: black;
+    background-color: rgb(153, 153, 153, 0.8);
+    overflow-y: auto; /* Allow vertical scrolling */
+    background-image: url("https://media.tenor.com/WaE3YVenGtoAAAAM/str-ssj3-goku-goku.gif");
+    background-size: cover;
+    background-position: center;
+}
+
 .dokkan {
     display: flex;
     flex-direction: column;
@@ -79,6 +92,53 @@ body {
     justify-content: center;
     align-items: center;
     margin-top: 50px;
+}
+
+.char {
+    text-align: center;
+    color: black;
+    margin: 0;
+    background-color: rgb(220, 220, 220, 0.5);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    width: 100%;
+}
+
+.stats-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Distribute space evenly */
+    width: 100%; /* Ensure it stretches across the full width */
+}
+
+.stats-labels {
+    display: flex;
+    margin: 5px 0;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.stats-values {
+    display: flex;
+    margin: 5px 0;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.stats-labels p {
+    margin: 5px 50px;
+}
+.stats-values p {
+    margin: 5px 75px;
+}
+
+.stats-labels p {
+    font-weight: bold; /* To highlight labels */
 }
 
 .vol-container {
@@ -227,6 +287,20 @@ h2 {
     padding-top: 70px;
 }
 
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgb(254, 161, 0);
+    border-radius: 5px;
+    padding: 10px 20px;
+    transition-duration: 0.2s;
+    top: 60px;
+    font-size: 40px;
+    margin: 0;
+    text-align: center;
+    display:block;
+    padding-top: 15px;
+}
+
 h1:hover {
     transform:scale(1.1)
 }
@@ -336,6 +410,24 @@ h1:hover {
     width: 100%;
 }
 
+p {
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgb(254, 254, 0);
+    border-radius: 5px;
+    padding: 5px 5px;
+    transition-duration: 0.2s;
+    font-size: 20px;
+    margin: 0;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
 p1 {
     font-family: 'Montserrat', sans-serif;
     background-color: rgb(254, 212, 0);
@@ -384,6 +476,26 @@ p3 {
     100% {
         opacity: 1;
     }
+}
+
+p4 {
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgb(254, 254, 0);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    padding: 5px 5px;
+    transition-duration: 0.2s;
+    font-size: 20px;
+    margin: 0;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    border: 2px solid #000000; 
+}
+
+p4:hover {
+    border: 4px solid #b01a00cc;
 }
 
 .chatbot-container {
