@@ -8,6 +8,7 @@
         <link rel="icon" href="https://static.wikia.nocookie.net/dragonball/images/5/52/Gogeta.jpg" type="image/jpg">
 
         <link rel = "stylesheet" type = "text/css" href = "style.css">
+        <script src = "script.js"></script>
     </head>
     <body class = "ost">
         
@@ -18,7 +19,7 @@
                 <!--<a href = "kofi.html" class = "s-button"><img src = "https://cdn.prod.website-files.com/5c14e387dab576fe667689cf/670f5a01229bf8a18f97a3c1_favion.png" alt = Icon class = "kofi-icon">Support me</a>-->
             </ul>
         </div>
-        <div class = "container">
+        <div class = "ostbox">
             <h1>Dokkan OST Guessr</h1>
             <p1>Wanna play? Join the discord server below!</p1>
             <p3><a href="https://discord.com/oauth2/authorize?client_id=571094478698446849&permissions=8&integration_type=0&scope=bot" target="_blank">(or invite the bot to your discord server)</a></p3>
@@ -27,6 +28,50 @@
             src="https://www.youtube.com/embed/25pOxgGiDLY?autoplay=1"
             frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
             </iframe>
+            <button onclick = "goBottom()" id = "ost-commands" style="margin-top: 70px;">Commands</button>
+            <br>
+            <table>
+              <tr>
+                <th>Command</th>
+                <th>Description</th>
+              </tr>
+              <tr>
+                <td>/game</td>
+                <td>Start a game of Guess the Dokkan OSTs given a number of rounds</td>
+              </tr>
+              <tr>
+                <td>/endless</td>
+                <td>Endless barrage of Guess the Dokkan OSTs, stop with /stop</td>
+              </tr>
+              <tr>
+                <td>/play</td>
+                <td>Play a Dokkan OST of choice in vc</td>
+              </tr>
+              <tr>
+                <td>/loop</td>
+                <td>Loop the current Dokkan OST from /play</td>
+              </tr>
+              <tr>
+                <td>/radio</td>
+                <td>Dokkan radio, play random Dokkan OSTs infinitely</td>
+              </tr>
+              <tr>
+                <td>/skipround</td>
+                <td>Skip the current game round from /game or /endless</td>
+              </tr>
+              <tr>
+                <td>/skip</td>
+                <td>Skip the current Dokkan OST playing in radio</td>
+              </tr>
+              <tr>
+                <td>/stop</td>
+                <td>Stop the current /game or /endless</td>
+              </tr>
+              <tr>
+                <td>/dc</td>
+                <td>Disconnect the bot from the voice channel from /play or /radio</td>
+              </tr>
+            </table></br>
         </div>
     </body>
 </html>

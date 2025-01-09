@@ -131,3 +131,10 @@ document.getElementById("showChatbotIcon").addEventListener("click", function() 
     chatbotContainer.style.display = "block"; // Show the chatbot
     chatbotIcon.style.display = "none"; // Hide the icon
 });
+
+let ostcommand = document.getElementById("ost-commands");
+
+function goBottom() {
+    document.body.scrollTop = document.body.scrollHeight;
+    document.documentElement.scrollTop = document.documentElement.scrollHeight;
+}
