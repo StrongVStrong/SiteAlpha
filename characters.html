@@ -19,7 +19,7 @@
     <!-- Favicon Link -->
     <link rel="icon" href="https://static.wikia.nocookie.net/dragonball/images/5/52/Gogeta.jpg" type="image/jpg">
 
-    <title>{{ Name }}</title>
+    <title></title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body class = "characters">
@@ -32,7 +32,7 @@
     </div>
     <div class = "char">
         <header>
-            <h1>{{ Subname }} : {{ Name }}</h1>
+            <h1 id="char-name">Character Name</h1>
         </header>
         <main>
             <div class="stats-container">
@@ -48,129 +48,116 @@
                             <p>DEF (100%)</p>
                         </div>
                         <div class="stats-values">
-                            <p>{{ HP_55 if HP_55 else "N/A" }}</p>
-                            <p>{{ HP_100 if HP_100 else "N/A" }}</p>
-                            <p>{{ ATK_55 if ATK_55 else "N/A" }}</p>
-                            <p>{{ ATK_100 if ATK_100 else "N/A" }}</p>
-                            <p>{{ DEF_55 if DEF_55 else "N/A" }}</p>
-                            <p>{{ DEF_100 if DEF_100 else "N/A" }}</p>
+                            <p id="hp-55">N/A</p>
+                            <p id="hp-100">N/A</p>
+                            <p id="atk-55">N/A</p>
+                            <p id="atk-100">N/A</p>
+                            <p id="def-55">N/A</p>
+                            <p id="def-100">N/A</p>
                         </div>
                     </div>
                 </section>
             </div>
 
-            {% if Leader_Skill %}
-            <div class="leader-skill-container">
+            <div class="leader-skill-container" id="leader-skill-container" style="display: none;">
                 <section class="leader-skill">
                     <h3>Leader Skill</h3>
-                    <p>{{ Leader_Skill }}</p>
+                    <p id="leader-skill"></p>
                 </section>
             </div>
-            {% endif %}
 
-            {% if Passive_Skill %}
-                <div class="passive-skill-container">
-                    <section class="passive-skill">
-                        <h3>Passive Skill</h3>
-                        {% for part in Passive_Skill.split(',') %}
-                            <p>- {{ part.strip() }}</p>  <!-- Using strip to remove leading/trailing whitespace -->
-                        {% endfor %}
-                    </section>
-                </div>
-            {% endif %}
+            <div class="passive-skill-container" id="passive-skill-container" style="display: none;">
+                <section class="passive-skill">
+                    <h3>Passive Skill</h3>
+                    <p id="passive-skill"></p>
+                    <p id = "passive-effect"></p>
+                </section>
+            </div>
 
-            {% if Active_Skill %}
-            <div class="active-skill-container">
+            <div class="active-skill-container" id="active-skill-container" style="display: none;">
                 <section class="active-skill">
                     <h3>Active Skill</h3>
-                    <p>{{ Active_Skill }}</p>
+                    <p id="active-skill"></p>
+                    <p id="active-effect"></p>
                 </section>
             </div>
-            {% endif %}
 
-            {% if Super_Attack_12_Ki_Name %}
-            <div class="super-attack-12-ki-container">
+            <!-- Super Attack 12 Ki -->
+            <div class="super-attack-12-ki-container" id="super-attack-12-ki-container" style="display: none;">
                 <section class="super-attack-12-ki">
                     <h3>Super Attack (12 Ki)</h3>
-                    <p>{{ Super_Attack_12_Ki_Name }}</p>
-                    <p>{{ Super_Attack_12_Ki_Effect }}</p>
+                    <p id="super-attack-12-ki-name">N/A</p>
+                    <p id="super-attack-12-ki-effect">N/A</p>
                 </section>
             </div>
-            {% endif %}
 
-            {% if Ultra_Super_Attack_18_Ki_Name %}
-            <div class="ultra-super-attack-18-ki-container">
+            <!-- Ultra Super Attack 18 Ki -->
+            <div class="ultra-super-attack-18-ki-container" id="ultra-super-attack-18-ki-container" style="display: none;">
                 <section class="ultra-super-attack-18-ki">
                     <h3>Ultra Super Attack (18 Ki)</h3>
-                    <p>{{ Ultra_Super_Attack_18_Ki_Name }}</p>
-                    <p>{{ Ultra_Super_Attack_18_Ki_Effect }}</p>
+                    <p id="ultra-super-attack-18-ki-name">N/A</p>
+                    <p id="ultra-super-attack-18-ki-effect">N/A</p>
                 </section>
             </div>
-            {% endif %}
 
-            {% if Links %}
-            <div class="links-container">
+            <!-- Links -->
+            <div class="links-container" id="links-container" style="display: none;">
                 <section class="links">
                     <h3>Links</h3>
-                    <p>{{ Links }}</p>
+                    <p id="links">N/A</p>
                 </section>
             </div>
-            {% endif %}
 
-            {% if Categories %}
-            <div class="categories-container">
+            <!-- Categories -->
+            <div class="categories-container" id="categories-container" style="display: none;">
                 <section class="categories">
                     <h3>Categories</h3>
-                    <p>{{ Categories }}</p>
+                    <p id="categories">N/A</p>
                 </section>
             </div>
-            {% endif %}
 
-            {% if Transformation_Condition %}
-            <div class="transformation-condition-container">
+            <!-- Transformation Condition -->
+            <div class="transformation-condition-container" id="transformation-condition-container" style="display: none;">
                 <section class="transformation-condition">
                     <h3>Transformation Condition</h3>
-                    <p>{{ Transformation_Condition }}</p>
+                    <p id="transformation-condition">N/A</p>
                 </section>
             </div>
-            {% endif %}
 
-            {% if Release_Date %}
-            <div class="release-date-container">
+            <!-- Release Date -->
+            <div class="release-date-container" id="release-date-container" style="display: none;">
                 <section class="release-date">
                     <h3>Release Date</h3>
-                    <p>{{ Release_Date }}</p>
+                    <p id="release-date">N/A</p>
                 </section>
             </div>
-            {% endif %}
 
-            {% if Ki_Multiplier %}
-            <div class="ki-multiplier-container">
+            <!-- Ki Multiplier -->
+            <div class="ki-multiplier-container" id="ki-multiplier-container" style="display: none;">
                 <section class="ki-multiplier">
                     <h3>Ki Multiplier</h3>
-                    <p>{{ Ki_Multiplier }}</p>
+                    <p id="ki-multiplier">N/A</p>
                 </section>
             </div>
-            {% endif %}
 
-            {% if Highest_DMG_Multiplier %}
-            <div class="highest-dmg-multiplier-container">
+            <!-- Highest DMG Multiplier -->
+            <div class="highest-dmg-multiplier-container" id="highest-dmg-multiplier-container" style="display: none;">
                 <section class="highest-dmg-multiplier">
                     <h3>Highest DMG Multiplier</h3>
-                    <p>{{ Highest_DMG_Multiplier }}</p>
+                    <p id="highest-dmg-multiplier">N/A</p>
                 </section>
             </div>
-            {% endif %}
 
-            {% if LR_12_Ki_DMG_Multiplier %}
-            <div class="lr-12-ki-dmg-multiplier-container">
+            <!-- LR 12 Ki DMG Multiplier -->
+            <div class="lr-12-ki-dmg-multiplier-container" id="lr-12-ki-dmg-multiplier-container" style="display: none;">
                 <section class="lr-12-ki-dmg-multiplier">
                     <h3>LR 12 Ki DMG Multiplier</h3>
-                    <p>{{ LR_12_Ki_DMG_Multiplier }}</p>
+                    <p id="lr-12-ki-dmg-multiplier">N/A</p>
                 </section>
             </div>
-            {% endif %}
         </main>
     </div>
+    
+    <script src="data.js"></script>
 </body>
 </html>

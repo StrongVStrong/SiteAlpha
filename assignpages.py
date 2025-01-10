@@ -1,31 +1,48 @@
-import os
-from jinja2 import Environment, FileSystemLoader
-from bs4 import BeautifulSoup
+import re
+import urllib.parse
 
-# Set up Jinja2 environment
-env = Environment(loader=FileSystemLoader(r'C:\Users\Megas\Documents\GitHub\SiteAlpha'))  # Adjust this to your template folder path
-template = env.get_template('dokkanpages.html')
+# Open the HTML file to read
+with open('dokkanpages.html', 'r') as file:
+    html_content = file.read()
 
-# Get all HTML file names from the generated_pages folder
-directory = 'generated_pages'  # Folder where your character HTML files are stored
-characters = []
+# Function to generate URL-safe format for the subname (before the colon)
+def generate_url(subname):
+    # URL encode the subname (this will be the part before the colon)
+    url_safe_name = urllib.parse.quote(subname)
+    return f"characters.html?character={url_safe_name}"
 
-# Loop through each HTML file in the generated_pages directory
-for filename in os.listdir(directory):
-    if filename.endswith('.html'):
-        # Extract the display name from the <h1> tag inside the HTML
-        with open(os.path.join(directory, filename), 'r', encoding='utf-8') as file:
-            soup = BeautifulSoup(file, 'html.parser')
-            h1_tag = soup.find('h1')
-            if h1_tag:
-                display_name = h1_tag.text.strip()  # Get text inside <h1> and clean it
-                characters.append((display_name, filename.replace('.html', '')))  # Save display_name and filename without extension
+# Function to process each link and replace the old links
+def process_links(html_content):
+    # Find all links in the format "Character-Ability.html" and capture the character name and ability
+    pattern = r'href="generated_pages/([^"]+)\.html">([^<]+)</a>'
+    matches = re.findall(pattern, html_content)
 
-# Render the template with the list of character display names and filenames
-output = template.render(characters=characters)
+    updated_links = []
 
-# Write the output to a file (e.g., dokkanpages.html)
-with open('dokkanpages.html', 'w', encoding='utf-8') as f:
-    f.write(output)
+    for match in matches:
+        link_name = match[0]  # Example: Aeos-Space-Time_Selector
+        link_text = match[1]  # Example: Space-Time Selector : Aeos
 
-print("Home page with character links generated successfully.")
+        # Split the link text into subname (before colon) and character name (after colon)
+        subname, character_name = link_text.split(' : ')
+
+        # Generate the new URL with the subname (before the colon)
+        new_url = generate_url(subname)
+        
+        # Generate the updated link with the new URL containing only the subname
+        updated_link = f'<a class="hidelink" href="{new_url}">{link_text}</a>'
+        updated_links.append(updated_link)
+
+    # Replace the old links with the new updated links in the HTML content
+    updated_html = re.sub(pattern, lambda match: updated_links.pop(0), html_content)
+
+    return updated_html
+
+# Process the HTML content and generate the updated links
+updated_html_content = process_links(html_content)
+
+# Write the updated HTML content to a new file
+with open('updated_dokkanpages.html', 'w') as file:
+    file.write(updated_html_content)
+
+print("Links have been successfully updated.")
