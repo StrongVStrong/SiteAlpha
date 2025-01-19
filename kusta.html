@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Open Graph Meta Tags -->
+        <meta property="og:title" content="Megas Hub" />
+        <meta property="og:description" content="Check out my goofy stuff its epic" />
+        <meta property="og:image" content="https://e0.pxfuel.com/wallpapers/46/769/desktop-wallpaper-the-titans-battle-epic-pokemon-battle-thumbnail.jpg" />
+        <meta property="og:url" content="https://strongvstrong.github.io/SiteAlpha/home.html" />
+        <meta property="og:type" content="website" />
+
+         <!-- Twitter Card Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://e0.pxfuel.com/wallpapers/46/769/desktop-wallpaper-the-titans-battle-epic-pokemon-battle-thumbnail.jpg" />
+        
+        <!-- Favicon Link -->
+        <link rel="icon" href="https://static.wikia.nocookie.net/dragonball/images/5/52/Gogeta.jpg" type="image/jpg">
+
+        <title> Megas</title>
+        <link rel = "stylesheet" type = "text/css" href = "style.css">
+    </head>
+    <body class ="home">
+        <audio id = "background-audio" autoplay loop>
+            <source src = "assets/outside.mp3" type = "audio/mp3">
+        </audio>
+
+        <div class = "menu">
+            <ul>
+                <a href = "home.html" class = "menu-button">Home</a>
+                <a href = "https://github.com/StrongVStrong" class = "menu-button">Github</a>
+                <!--<a href = "kofi.html" class = "s-button"><img src = "https://cdn.prod.website-files.com/5c14e387dab576fe667689cf/670f5a01229bf8a18f97a3c1_favion.png" alt = Icon class = "kofi-icon">Support me</a>-->
+            </ul>
+        </div>
+
+        <div class = "container">
+            <h1> Mega Epic Content </h1>
+            <p1>(wip)</p1>
+
+            <div class="chatbot-container" id = "bot-container">
+                <div class="chatbox">
+                    <div class="messages" id="messages"></div>
+                    <div class="chatbox-input-container"> <!-- Input and button container -->
+                        <input type="text" id="userInput" placeholder="Talk to Vegito Blue" />
+                        <button id="sendBtn">Send</button>
+                        
+                    </div>
+                    <button id="hideBtn">Hide</button>
+                </div>
+            </div>
+
+            <div id="chatbotIcon" style="display: none;">
+                <img src="https://pbs.twimg.com/media/E702j-iWYAceOmr.jpg" alt="Chatbot Icon" id="showChatbotIcon" />
+            </div>
+            
+            <div class = "vol-container">
+                <div class = "volume">
+                    <a href = "#" id = "mute-button" class = "mute-button">
+                        <img src = "" alt = "Mute Icon" id = "mute-icon" />
+                    </a>
+                </div>
+
+                <div class = "vslider">
+                    <input type = "range" id = "volume-slider" class = "volume-slider" min = "0" max = "1" step = "0.01" value = "1">
+                </div>
+            </div>
+
+        </div>
+
+        <script src = "script.js"></script>
+    </body>
+</html>
