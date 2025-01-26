@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, Response
 import yt_dlp
 import os
 from flask_cors import CORS
@@ -79,26 +79,33 @@ def get_formats():
 
 
 
-@app.route('/download', methods = ['POST'])
+@app.route('/download', methods=['POST'])
 def download():
-    try:
-        data = request.json
-        url = data.get('url')
-        format_id = data.get('format')
-        
-        if not url or not format_id:
-            return jsonify({'error': 'URL/format not provided'}), 400
-        
-        result = download_vid(url, format_id)
-        
-        return jsonify({
-            "message" : "Downloaded",
-            "title" : result.get('title'),
-            "filename" : result.get('_filename'),
-        }), 200
-        
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
+  try:
+    data = request.json
+    url = data.get('url')
+    format_id = data.get('format')
+
+    if not url or not format_id:
+      return jsonify({'error': 'URL/format not provided'}), 400
+
+    ydl_opts = {
+      'format': format_id,
+      'quiet': True,
+    }
+
+    with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+      info = ydl.extract_info(url, download=False)
+      if 'url' not in info:
+        raise ValueError("Video URL could not be extracted.")
+
+      video_url = info['url']
+      print(f"Video URL extracted: {video_url}")
+
+      return jsonify({'url': video_url})
+
+  except Exception as e:
+    return jsonify({"error": str(e)}), 500
     
 if __name__ == '__main__':
     app.run(debug = True, port = 5000)

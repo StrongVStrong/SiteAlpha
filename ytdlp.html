@@ -37,15 +37,15 @@
             <p1>Download Youtube videos with ease</p1>
 
             <!-- Input for URL -->
-            <input type="text" id="videoUrl" placeholder="Enter YouTube Video URL" />
-
-            <!-- Dropdown to Select Format -->
-            <select id="formatSelect">
-                <!-- Format options will be populated dynamically -->
-            </select>
+            <input type="yttext" id="videoUrl" placeholder="Enter YouTube Video URL" />
 
             <!-- Button to Fetch Formats -->
             <button id="fetchFormatsBtn">Fetch Formats</button>
+
+            <!-- Dropdown to Select Format -->
+            <select id="formatSelect" style = "display:none;">
+                <!-- Format options will be populated dynamically -->
+            </select>
 
             <!-- Button to Download -->
             <button id="downloadBtn" disabled>Download</button>
@@ -88,9 +88,9 @@
                             option.textContent = `${format.resolution} (${format.ext})`;
                             formatSelect.appendChild(option);
                         });
-
+                        
+                        formatSelect.style.display = 'block';
                         downloadBtn.disabled = false; // Enable download button
-                        alert('Formats fetched successfully!');
                     } catch (error) {
                         console.error('Error fetching formats:', error);
                         alert('Failed to fetch formats.');
@@ -99,33 +99,47 @@
 
                 // Download the selected format
                 downloadBtn.addEventListener('click', async () => {
-                    const url = videoUrl.value;
-                    const format = formatSelect.value;
+                const url = videoUrl.value;
+                const format = formatSelect.value;
 
-                    if (!url || !format) {
-                        alert('Please fetch formats and select one before downloading!');
-                        return;
+                if (!url || !format) {
+                    alert('Please fetch formats and select one before downloading!');
+                    return;
+                }
+
+                try {
+                    const response = await fetch('http://localhost:5000/download', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ url, format }),
+                    });
+
+                    if (!response.ok) {
+                    const errorData = await response.json();
+                    alert(`Error downloading video: ${errorData.error}`);
+                    return;
                     }
 
-                    try {
-                        const response = await fetch('http://localhost:5000/download', {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify({ url, format }),
-                        });
+                    const data = await response.json();
+                    const downloadUrl = data.url;
 
-                        if (!response.ok) {
-                            const errorData = await response.json();
-                            alert(`Error downloading video: ${errorData.error}`);
-                            return;
-                        }
+                    if (confirm(`Open download link for "${downloadUrl}"?`)) {
+                    // Create a hidden anchor element
+                    const link = document.createElement('a');
+                    link.href = downloadUrl;
+                    link.download = 'download.mp4';
+                    link.target = '_blank';
 
-                        const data = await response.json();
-                        alert(`Downloaded successfully: ${data.title}\nSaved as: ${data.filename}`);
-                    } catch (error) {
-                        console.error('Error downloading video:', error);
-                        alert('Failed to download video.');
+                    // Trigger a click on the hidden anchor element
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
                     }
+
+                } catch (error) {
+                    console.error('Error downloading video:', error);
+                    alert('Failed to download video.');
+                }
                 });
             </script>
         </body>
