@@ -186,7 +186,7 @@ body {
 }
 
 ul {
-    list-style-type: none;  /* Removes bullets */
+    list-style-type: none;
     padding: 0;
 }
 
@@ -767,3 +767,25 @@ html {
     scroll-behavior: smooth;
 }
 
+.thumbnail-button, .download-button {
+    display:inline-flex;
+    align-items:center;
+    justify-content: center;
+    vertical-align: top;
+    background-color: black;
+    color: white;
+    border-radius: 50px;
+    padding: 100px 90px;
+    margin:90px;
+    width: 550px;
+    height: 280px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 60px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.ytp {
+    background-color: red;
+    background-image: url("https://i.pinimg.com/originals/3e/49/01/3e4901898a7ed3e233381f0db74e9b3d.gif");
+}
