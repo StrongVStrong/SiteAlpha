@@ -38,6 +38,7 @@ body {
     height: 100vh;
     color: black;
     background-color: rgb(153, 153, 153);
+    overflow-y: auto;
 }
 
 .characters {
@@ -780,6 +781,7 @@ input:focus {
 
 html {
     scroll-behavior: smooth;
+    overflow-y: auto;
 }
 
 .thumbnail-button, .download-button {
@@ -801,7 +803,7 @@ html {
 }
 
 .ytp {
-    background-image: url("");
+    background-image: url("assets/4ku.jpg");
 }
 
 /* Main container for everything */
@@ -810,25 +812,22 @@ html {
     color: black;
     width: 100%;
     margin: 0;
-    background-color: rgba(220, 220, 220, 0.8);
+    margin-top: 100px;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;  /* Align everything from the top */
+    justify-content: flex-start;
     align-items: center;
     padding: 20px;
-    box-sizing: border-box;  /* Ensure padding doesn’t affect width/height */
-    min-height: 300px;  /* Ensures the container stays tall enough for input/button */
 }
-
 /* Input field styling */
-#videoUrl {
+#thumbUrl {
     background-color: black;
     color: white;
     border-radius: 100px;
     padding: 12px 20px;
     margin: 30px 0;
-    width: 60%;
+    width: 90%;
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     border: none;
@@ -836,37 +835,28 @@ html {
 
 /* Button Styling */
 #fetchThumb {
-    background-color: #4CAF50;  /* Green button */
+    background-color: black;
     color: white;
-    border-radius: 50px;
-    padding: 12px 20px;
-    margin: 10px;
-    width: 60%;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
+    border-radius: 10px;
+    padding: 10px 70px;
+    margin:5px;
+    font-family: 'Montserrat', sans-serif;
+    transition-duration: 0.2s;
 }
 
 #fetchThumb:hover {
-    background-color: #45a049;  /* Darker green on hover */
-}
-
-/* Styling for status message */
-#statusMessage {
-    font-size: 18px;
-    color: green;
-    margin-bottom: 20px;
+    background-color: #ffffff;  /* Darker green on hover */
+    color: black;
 }
 
 /* Thumbnail container styling */
 #thumbnailContainer {
     display: flex;
     justify-content: center;  /* Center thumbnails horizontally */
-    gap: 20px;
+    align-items: center;  /* Center thumbnails vertically */
+    gap: 20px;  /* Reduced gap to avoid excessive space */
     flex-wrap: wrap;  /* Allow wrapping of images to new rows if needed */
     margin-top: 30px;  /* Spacing from the input/button area */
-    width: 100%;
 }
 
 /* Styling for each thumbnail image */
@@ -876,8 +866,6 @@ html {
     max-width: 100%;       /* Ensure images don't stretch beyond the container */
     max-height: 100vh;     /* Prevent images from growing too large */
     border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);  /* Slight shadow for each thumbnail */
-    transition: transform 0.3s ease-in-out;
 }
 
 /* For maxresdefault images that should take more space */
@@ -887,6 +875,17 @@ html {
     max-height: 100vh;     /* Ensure images take up all vertical space without overflowing */
 }
 
-#thumbnailContainer img:hover {
-    transform: scale(1.05);  /* Slight zoom effect on hover */
+#statusMessage {
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+    border: 5px;
+    font-family: 'Montserrat', sans-serif;
+}
+/* Full height for the body and no padding/margin */
+body.ytthumb {
+    margin: 0;
+    padding: 150px;
+    width: 100%;
+    height: 100%; /* Ensure body takes up the full height */
+    background-image: url("assets/4ku.jpg");
 }

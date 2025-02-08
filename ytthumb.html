@@ -29,10 +29,11 @@
             <!--<a href = "kofi.html" class = "s-button"><img src = "https://cdn.prod.website-files.com/5c14e387dab576fe667689cf/670f5a01229bf8a18f97a3c1_favion.png" alt = Icon class = "kofi-icon">Support me</a>-->
         </ul>
     </div>
-    <body class = "ytp">
+    <body class = "ytthumb">
+        <div class = "thumbBG">
+        <h1> Fetch YT Thumbnails </h1>
         <div class = "thumbContainer">
-
-                <input type="yttext" id="videoUrl" placeholder="Enter YouTube Video URL" />
+                <input type="yttext" id="thumbUrl" placeholder="Enter YouTube Video URL" />
 
                 <button type = "button" id="fetchThumb">Fetch</button>
                 <div id="thumbnailContainer"></div>
@@ -46,9 +47,9 @@
                 document.getElementById("fetchThumb").addEventListener("click", function () {
                     console.log("Button clicked!");
 
-                    const url = document.getElementById("videoUrl").value;
+                    const url = document.getElementById("thumbUrl").value;
                     const videoId = extractYouTubeID(url);
-                    console.log("Extracted Video ID:", videoId);  // Check if we extracted the ID correctly
+                    console.log("Extracted Video ID:", videoId); 
 
                     const statusMessage = document.getElementById("statusMessage");
                     statusMessage.textContent = "Loading...";
@@ -59,12 +60,14 @@
                     }
 
                     const thumbnails = [
-                        "default.jpg",
-                        "mqdefault.jpg",
-                        "hqdefault.jpg",
+                        "maxresdefault.jpg",
                         "sddefault.jpg",
-                        "maxresdefault.jpg"
+                        "hqdefault.jpg",
+                        "mqdefault.jpg",
+                        "default.jpg"
                     ];
+
+                    document.getElementById("thumbUrl").value = "";
 
                     const container = document.createElement("div");
                     container.style.marginTop = "20px";
@@ -94,6 +97,7 @@
                 );
                 return match ? match[1] : null;
             }
-        </script>   
+        </script>
+        </div>   
     </body>
 </html>
