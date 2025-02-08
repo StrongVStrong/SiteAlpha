@@ -138,3 +138,48 @@ function goBottom() {
     document.body.scrollTop = document.body.scrollHeight;
     document.documentElement.scrollTop = document.documentElement.scrollHeight;
 }
+
+document.getElementById("fetchThumb").addEventListener("click", function () {
+    const url = document.getElementById("videoUrl").value;
+    const videoId = extractYouTubeID(url);
+
+    if (!videoId) {
+        alert("Invalid YouTube URL");
+        return;
+    }
+
+    const thumbnails = [
+        "default.jpg",
+        "mqdefault.jpg",
+        "hqdefault.jpg",
+        "sddefault.jpg",
+        "maxresdefault.jpg"
+    ];
+
+    const container = document.createElement("div");
+    container.style.marginTop = "20px";
+
+    thumbnails.forEach(format => {
+        const img = document.createElement("img");
+        img.src = `https://img.youtube.com/vi/${videoId}/${format}`;
+        img.alt = format;
+        img.style.display = "block";
+        img.style.marginBottom = "10px";
+        container.appendChild(img);
+    });
+
+    // Remove existing thumbnails before appending new ones
+    const existingThumbnails = document.getElementById("thumbnailContainer");
+    if (existingThumbnails) {
+        existingThumbnails.innerHTML = ''; // Clear the existing thumbnails
+    }
+
+    existingThumbnails.appendChild(container);
+});
+
+function extractYouTubeID(url) {
+    const match = url.match(
+        /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/
+    );
+    return match ? match[1] : null;
+}

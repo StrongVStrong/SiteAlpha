@@ -94,6 +94,21 @@ body {
     margin-top: 50px;
 }
 
+.thumbContainer {
+    background-color: rgba(220, 220, 220, 0.8); /* Light background for better visibility */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* Add subtle shadow */
+    width: 100%;
+    max-width: 600px;  /* Limiting the width */
+    margin-top: 50px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .char {
     text-align: center;
     color: black;
@@ -786,6 +801,92 @@ html {
 }
 
 .ytp {
-    background-color: red;
-    background-image: url("https://i.pinimg.com/originals/3e/49/01/3e4901898a7ed3e233381f0db74e9b3d.gif");
+    background-image: url("");
+}
+
+/* Main container for everything */
+.thumbContainer {
+    text-align: center;
+    color: black;
+    width: 100%;
+    margin: 0;
+    background-color: rgba(220, 220, 220, 0.8);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;  /* Align everything from the top */
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;  /* Ensure padding doesn’t affect width/height */
+    min-height: 300px;  /* Ensures the container stays tall enough for input/button */
+}
+
+/* Input field styling */
+#videoUrl {
+    background-color: black;
+    color: white;
+    border-radius: 100px;
+    padding: 12px 20px;
+    margin: 30px 0;
+    width: 60%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    border: none;
+}
+
+/* Button Styling */
+#fetchThumb {
+    background-color: #4CAF50;  /* Green button */
+    color: white;
+    border-radius: 50px;
+    padding: 12px 20px;
+    margin: 10px;
+    width: 60%;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#fetchThumb:hover {
+    background-color: #45a049;  /* Darker green on hover */
+}
+
+/* Styling for status message */
+#statusMessage {
+    font-size: 18px;
+    color: green;
+    margin-bottom: 20px;
+}
+
+/* Thumbnail container styling */
+#thumbnailContainer {
+    display: flex;
+    justify-content: center;  /* Center thumbnails horizontally */
+    gap: 20px;
+    flex-wrap: wrap;  /* Allow wrapping of images to new rows if needed */
+    margin-top: 30px;  /* Spacing from the input/button area */
+    width: 100%;
+}
+
+/* Styling for each thumbnail image */
+#thumbnailContainer img {
+    width: auto;           /* Let images keep their natural width */
+    height: auto;          /* Maintain aspect ratio */
+    max-width: 100%;       /* Ensure images don't stretch beyond the container */
+    max-height: 100vh;     /* Prevent images from growing too large */
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);  /* Slight shadow for each thumbnail */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* For maxresdefault images that should take more space */
+#thumbnailContainer img[src*="maxresdefault"] {
+    width: 100%;           /* Let maxresdefault images take the entire width */
+    height: auto;          /* Maintain aspect ratio */
+    max-height: 100vh;     /* Ensure images take up all vertical space without overflowing */
+}
+
+#thumbnailContainer img:hover {
+    transform: scale(1.05);  /* Slight zoom effect on hover */
 }

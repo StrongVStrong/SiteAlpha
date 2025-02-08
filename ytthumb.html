@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Open Graph Meta Tags -->
+        <meta property="og:title" content="Megas Hub" />
+        <meta property="og:description" content="Check out my goofy stuff its epic" />
+        <meta property="og:image" content="https://e0.pxfuel.com/wallpapers/46/769/desktop-wallpaper-the-titans-battle-epic-pokemon-battle-thumbnail.jpg" />
+        <meta property="og:url" content="https://strongvstrong.github.io/SiteAlpha/home.html" />
+        <meta property="og:type" content="website" />
+
+         <!-- Twitter Card Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://e0.pxfuel.com/wallpapers/46/769/desktop-wallpaper-the-titans-battle-epic-pokemon-battle-thumbnail.jpg" />
+        
+        <!-- Favicon Link -->
+        <link rel="icon" href="https://static.wikia.nocookie.net/dragonball/images/5/52/Gogeta.jpg" type="image/jpg">
+
+        <title> YT </title>
+        <link rel = "stylesheet" type = "text/css" href = "style.css">
+    </head>
+
+    <div class = "menu">
+        <ul>
+            <a href = "home.html" class = "menu-button">Home</a>
+            <a href = "https://github.com/StrongVStrong" class = "menu-button">Github</a>
+            <!--<a href = "kofi.html" class = "s-button"><img src = "https://cdn.prod.website-files.com/5c14e387dab576fe667689cf/670f5a01229bf8a18f97a3c1_favion.png" alt = Icon class = "kofi-icon">Support me</a>-->
+        </ul>
+    </div>
+    <body class = "ytp">
+        <div class = "thumbContainer">
+
+                <input type="yttext" id="videoUrl" placeholder="Enter YouTube Video URL" />
+
+                <button type = "button" id="fetchThumb">Fetch</button>
+                <div id="thumbnailContainer"></div>
+                <div id="statusMessage"></div>
+        </div>
+        
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                console.log("Script is loaded and DOM is ready.");
+
+                document.getElementById("fetchThumb").addEventListener("click", function () {
+                    console.log("Button clicked!");
+
+                    const url = document.getElementById("videoUrl").value;
+                    const videoId = extractYouTubeID(url);
+                    console.log("Extracted Video ID:", videoId);  // Check if we extracted the ID correctly
+
+                    const statusMessage = document.getElementById("statusMessage");
+                    statusMessage.textContent = "Loading...";
+
+                    if (!videoId) {
+                        statusMessage.textContent = "Invalid YouTube URL";
+                        return;
+                    }
+
+                    const thumbnails = [
+                        "default.jpg",
+                        "mqdefault.jpg",
+                        "hqdefault.jpg",
+                        "sddefault.jpg",
+                        "maxresdefault.jpg"
+                    ];
+
+                    const container = document.createElement("div");
+                    container.style.marginTop = "20px";
+
+                    thumbnails.forEach(format => {
+                        const img = document.createElement("img");
+                        img.src = `https://img.youtube.com/vi/${videoId}/${format}`;
+                        img.alt = format;
+                        img.style.display = "block";
+                        img.style.marginBottom = "10px";
+                        container.appendChild(img);
+                    });
+
+                    const existingThumbnails = document.getElementById("thumbnailContainer");
+                    if (existingThumbnails) {
+                        existingThumbnails.innerHTML = '';  // Clear existing thumbnails
+                    }
+
+                    existingThumbnails.appendChild(container);
+                    statusMessage.textContent = "Thumbnails fetched successfully!";
+                });
+            });
+
+            function extractYouTubeID(url) {
+                const match = url.match(
+                    /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/
+                );
+                return match ? match[1] : null;
+            }
+        </script>   
+    </body>
+</html>
