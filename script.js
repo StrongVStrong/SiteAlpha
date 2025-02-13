@@ -100,7 +100,7 @@ async function sendMessage() {
 // Function to send the first message from Vegito
 function sendInitialMessage() {
     const initialMessage = "Yosha! Welcome to Megas Hub enjoy your stay!";
-    appendMessage(initialMessage, 'bot'); // Show Vegito's first message
+    appendMessage(initialMessage, 'bot');
 }
 
 // Trigger initial message when the page is loaded
@@ -112,14 +112,14 @@ document.getElementById('sendBtn').addEventListener('click', sendMessage);
 // Event listener for sending the message when "Enter" is pressed
 document.getElementById('userInput').addEventListener('keypress', function(event) {
     if (event.key === 'Enter') {
-        event.preventDefault();  // Prevent form submission behavior
+        event.preventDefault();
         sendMessage();
     }
 });
 
 document.getElementById("hideBtn").addEventListener("click", function() {
     var chatbotContainer = document.getElementById("bot-container");
-    chatbotContainer.style.display = "none"; // This hides the entire container
+    chatbotContainer.style.display = "none";
     chatbotIcon.style.display = "block";
 });
 
@@ -128,8 +128,8 @@ document.getElementById("showChatbotIcon").addEventListener("click", function() 
     var chatbotContainer = document.getElementById("bot-container");
     var chatbotIcon = document.getElementById("chatbotIcon");
 
-    chatbotContainer.style.display = "block"; // Show the chatbot
-    chatbotIcon.style.display = "none"; // Hide the icon
+    chatbotContainer.style.display = "block";
+    chatbotIcon.style.display = "none";
 });
 
 let ostcommand = document.getElementById("ost-commands");
@@ -168,10 +168,9 @@ document.getElementById("fetchThumb").addEventListener("click", function () {
         container.appendChild(img);
     });
 
-    // Remove existing thumbnails before appending new ones
     const existingThumbnails = document.getElementById("thumbnailContainer");
     if (existingThumbnails) {
-        existingThumbnails.innerHTML = ''; // Clear the existing thumbnails
+        existingThumbnails.innerHTML = '';
     }
 
     existingThumbnails.appendChild(container);
